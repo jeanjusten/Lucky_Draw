@@ -4,20 +4,20 @@ module.exports = function(grunt) {
 
         // Compiling Less init config for Grunt
         less: { 
-            development: { // Local, Running only in my PC
+            development: { 
                 files: {
-                    "dev/styles/main.css": "src/styles/main.less" // "Output file" : "origin file"  output to a development folder
+                    "dev/styles/main.css": "src/styles/main.less" 
                 },
                 options: {
                     livereload: true,
                 }
             },
-            production: { // Running on prod. Like Vercel
+            production: { 
                 options: {
-                    compress: true, // Minified file
+                    compress: true, 
                 },
                 files: {
-                    "dist/styles/main.min.css" : "src/styles/main.less" // "Output file" : "origin file" to be minified  output to a distribution folder (production)
+                    "dist/styles/main.min.css" : "src/styles/main.less"
                 }
             },
             html: {
@@ -107,18 +107,18 @@ module.exports = function(grunt) {
                 }
             }
         }
-    })
+    });
 
     //Loading Tasks
     grunt.loadNpmTasks("grunt-contrib-less"); 
-    grunt.loadNpmTasks("grunt-contrib-watch");
+    grunt.loadNpmTasks("grunt-contrib-watch"); 
     grunt.loadNpmTasks("grunt-replace"); 
     grunt.loadNpmTasks("grunt-contrib-htmlmin"); 
     grunt.loadNpmTasks("grunt-contrib-clean"); 
     grunt.loadNpmTasks("grunt-contrib-uglify"); 
 
-    // Creating default task
-    grunt.registerTask("default", [ 
+    // Creating default task (npm run grunt)
+    grunt.registerTask("default", [
         "watch", 
     ]);
 
