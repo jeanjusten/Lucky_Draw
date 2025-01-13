@@ -2,6 +2,7 @@ module.exports = function(grunt) {
     grunt.initConfig({
         pkg: grunt.file.readJSON("package.json"),
 
+        // Copy image folder to dist folder
         copy: {
             dist: {
                 expand: true,
