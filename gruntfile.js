@@ -28,7 +28,7 @@ module.exports = function(grunt) {
 
         // CSS Grunt Watcher 
         watch: {
-            files: ["src/styles/**/*.less"], // Access any folder (**) and any file (*)
+            files: ["src/styles/**/*.less"], 
             tasks: ["less:development"],
             options: {
                 livereload: true,
@@ -107,81 +107,23 @@ module.exports = function(grunt) {
                 }
             }
         }
-
-
-        // Compiling Sass init config for Grunt
-        /* 
-        sass: { 
-            dist: {
-                options: {
-                    style: "compressed" // Minified file
-                },
-                files: {
-                    "main2.css" : "main.scss" // "Output file" : "origin file" to be minified
-                    }
-            }
-        },
-        */
-        
-        /*
-        concurrent: { // Concurrent is a plugin to execute async tasks when i npm run grunt. Good for compressing images and other slow tasks
-            target: [ // Tasks to be executed asyncronously 
-                "helloGrunt",
-                "less",
-                //"sass",
-                "slowTask",
-            ]
-        }
-        */
     })
-
-
-    // TASKS
-    // Registering a task. to run only this task, i must use npm run grunt helloGrunt
-    /*
-    grunt.registerTask("helloGrunt", function() { 
-        const done = this.async(); // 1) If i want a async task, i must inform Grunt of it
-        setTimeout(function() {  
-            console.log("Hello Grunt!")
-            done(); // 2) 
-        }, 3000);
-    })
-
-    grunt.registerTask("slowTask", function() { 
-        const done = this.async(); 
-        setTimeout(function() {  
-            console.log("This took 5 secons")
-            done(); 
-        }, 5000);
-    })
-    */
 
     //Loading Tasks
-    // Less for Grunt
-    grunt.loadNpmTasks("grunt-contrib-less"); // Loading the tasks of the contrib less-grunt. (npm i --save-dev grunt-contrib-less)
-    grunt.loadNpmTasks("grunt-contrib-watch"); // Watcher for Grunt
-    grunt.loadNpmTasks("grunt-replace"); // Grunt Html replace // npm run grunt replace:dev
-    grunt.loadNpmTasks("grunt-contrib-htmlmin"); // Grunt Html minify
-    grunt.loadNpmTasks("grunt-contrib-clean"); // Grunt clean temporary directory
-    grunt.loadNpmTasks("grunt-contrib-uglify"); // Grunt Uglify plugin
-    // Sass for Grunt
-    //grunt.loadNpmTasks("grunt-contrib-sass"); // Loading the tasks of the contrib sass-grunt. (npm i --save-dev grunt-contrib-sass)
-    // Concurrent for Grunt
-    //grunt.loadNpmTasks("grunt-concurrent"); // Loading the tasks of the concurrent plugin. (npm i --save-dev grunt-concurrent)
+    grunt.loadNpmTasks("grunt-contrib-less"); 
+    grunt.loadNpmTasks("grunt-contrib-watch");
+    grunt.loadNpmTasks("grunt-replace"); 
+    grunt.loadNpmTasks("grunt-contrib-htmlmin"); 
+    grunt.loadNpmTasks("grunt-contrib-clean"); 
+    grunt.loadNpmTasks("grunt-contrib-uglify"); 
 
-
-    // Creating default task (npm run grunt)
-    grunt.registerTask("default", [ // "Default as the task name, and the array with all the task names to be executed when i npm run grunt"
-        // "helloGrunt", // Task to be executed
-        //"less:development", // Accessing the less: development level, defined in grunt init configs
-        "watch", // Running CSS Grunt watcher
-        // "sass",
-        //"concurrent", // replacing all the tasks with concurrent, since it has all the tasks on it asyncronously
+    // Creating default task
+    grunt.registerTask("default", [ 
+        "watch", 
     ]);
 
-
-    grunt.registerTask("build", [ // Must add this to the package.JSON file as a script -> "build": "grunt build",  // npm run build
-        "less:production", // Accessing the less: production level, defined in grunt init configs
+    grunt.registerTask("build", [ 
+        "less:production", 
         "htmlmin:dist",
         "replace:dist",
         "clean",
@@ -189,5 +131,3 @@ module.exports = function(grunt) {
         "uglify",
     ]);
 }
-
-// npm run grunt will run the default task
