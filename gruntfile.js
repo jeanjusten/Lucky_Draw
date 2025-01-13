@@ -2,6 +2,39 @@ module.exports = function(grunt) {
     grunt.initConfig({
         pkg: grunt.file.readJSON("package.json"),
 
+        copy: {
+            dist: {
+                expand: true,
+                cwd: "src/img/", 
+                src: "**/*",    
+                dest: "dist/img/", 
+                },
+            },
+            replace: {
+                dist: {
+                options: {
+                    patterns: [
+                    {
+                        match: "CSS_ADRESS",
+                        replacement: "./styles/main.min.css"
+                    },
+                    {
+                        match: "JS_ADRESS",
+                        replacement: "./scripts/main.min.js"
+                    }
+                    ]
+                },
+                files: [
+                    {
+                    expand: true,
+                    flatten: true,
+                    src: ["prebuild/index.html"],
+                    dest: "dist/"
+                    }
+                ]
+                }
+            },
+        
         // Compiling Less init config for Grunt
         less: { 
             development: { 
@@ -116,6 +149,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks("grunt-contrib-htmlmin"); 
     grunt.loadNpmTasks("grunt-contrib-clean"); 
     grunt.loadNpmTasks("grunt-contrib-uglify"); 
+    grunt.loadNpmTasks('grunt-contrib-copy');
 
     // Creating default task (npm run grunt)
     grunt.registerTask("default", [
@@ -126,6 +160,7 @@ module.exports = function(grunt) {
         "less:production", 
         "htmlmin:dist",
         "replace:dist",
+        "copy:dist",
         "clean",
         "replace:dev",
         "uglify",
