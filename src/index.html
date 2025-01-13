@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lucky Draw - Sorteador Online</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="@@CSS_ADRESS">
+</head>
+<body>
+    <main>
+        <div class="logo">
+            <img src="/src/img/logo.png" draggable="false" loading="lazy" alt="Lucky Draw logo">
+            <div class="logo-text">
+                <h1>Lucky Draw</h1>
+                <h2>Sorteador de números aleatórios</h2>
+                <br>
+                <hr>
+            </div>
+        </div>
+        <form>
+            <div>
+                <label for="min-number">Número Mínimo a ser sorteado</label>
+                <input type="number" id="min-number" placeholder="Ex: 1" required min="0" value="0" step="1"> 
+                <label for="max-number">Número Máximo a ser sorteado</label>
+                <input type="number" id="max-number" placeholder="Ex: 500" required min="1" required max="1000000000" value="100" step="1">
+            </div>
+            <button type="submit" id="generate">Sortear número</button>
+        </form>
+        <div class="result">
+            <h3 class="hidden-text">O Número sorteado foi:</h3>
+            <div class="result-number">
+            </div>
+        </div>
+    </main>
+
+    <!--Scripts-->
+    <script src="@@JS_ADRESS"></script>
+</body>
+</html>
