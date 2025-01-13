@@ -5,6 +5,7 @@
   "scripts": {
     "grunt": "grunt",
     "build": "grunt build",
+    "imgbuild": "mkdir -p dist/img && cp -r src/img/* dist/img && cp src/index.html dist/",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
