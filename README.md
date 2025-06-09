@@ -1,6 +1,7 @@
 ![Status](https://img.shields.io/badge/status-finished-brightgreen)
 ![License](https://img.shields.io/badge/license-MIT-blue)
 
+![2025-06-0321-42-52-ezgif com-video-to-gif-converter](https://github.com/user-attachments/assets/2452fbd4-7490-457a-b791-e88701a30b58)
 <!--Title Image-->
 # 💻 Lucky Draw - Random Number Generator
 <p>
@@ -52,7 +53,10 @@ It uses Grunt for automated tasks, and Less for CSS styling.
 <!--Features-->
 ## :large_orange_diamond: Features
 ### :arrow_forward: Drawing a Number
-Lucky Draw is pretty simple. You just have to choose a range of numbers (Lower and Upper number) greater than zero, and then click on Draw Number.
+Lucky Draw is pretty simple. You just have to choose a range of numbers (Lower and Upper number) greater than zero, and then click on Draw Number.<br>
+You can also draw multiple numbers by repeatedly clicking the button.
+![2025-06-0920-16-53-ezgif com-video-to-gif-converter](https://github.com/user-attachments/assets/e9c9bb09-0fc2-4308-b739-ce1facfa71e1)
+
 
 ### :arrow_forward: Responsiveness
 <p>
@@ -60,15 +64,15 @@ This webpage uses bootstrap to apply a series of breakpoints that grant a respon
 </p>
 
 #### :small_red_triangle_down: Mobile
-
+![2025-06-0920-19-46-ezgif com-crop](https://github.com/user-attachments/assets/380248c9-22d7-4940-898d-5df7cb4fd9f3)
 <p>- Mobile View</p>
 
 #### :small_red_triangle_down: Tablet
-
+![2025-06-0920-19-29-ezgif com-crop](https://github.com/user-attachments/assets/0fe69b4d-dbb1-456d-a716-8a79c025c080)
 <p>- Tablet View</p>
 
 #### :small_red_triangle_down: Desktop
-
+![2025-06-0920-10-46-ezgif com-video-to-gif-converter](https://github.com/user-attachments/assets/f7bb2837-78c8-4448-91f8-2b7b9a774397)
 <p>- Desktop View</p>
 
 <!--Automated Tasks-->
